@@ -11,7 +11,7 @@ db
 	.catch(error => console.log(error));
 
 db
-	.sync()
+	.sync({ force: true })
 	.then(() => console.log("Database is sincronized..."))
 	.catch(error => console.log(error));
 
