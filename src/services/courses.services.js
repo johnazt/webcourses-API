@@ -46,5 +46,30 @@ class CourseServices {
 			throw error;
 		}
 	}
+
+	static async createNew(newCourse) {
+		try {
+			const result = Courses.create(newCourse);
+			return result;
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	static async update(newData, id) {
+		try {
+			const result = await Courses.update(
+				{
+					description: newData.description
+				},
+				{
+					where: { id }
+				}
+			);
+			return result;
+		} catch (error) {
+			throw error;
+		}
+	}
 }
 module.exports = CourseServices;

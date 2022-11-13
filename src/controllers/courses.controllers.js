@@ -27,8 +27,30 @@ const getAllCourseWithVideos = async (req, res) => {
 	}
 };
 
+const createNewCourse = async (req, res) => {
+	try {
+		const newCourse = req.body;
+		const result = CourseServices.createNew(newCourse);
+		res.json(result);
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+const updateDescriptionCourse = async (req, res) => {
+	try {
+		const { id } = req.params;
+		const newData = req.body;
+		const result = await CourseServices.update(newData, id);
+		res.json(result);
+	} catch (error) {
+		console.log(error);
+	}
+};
 module.exports = {
 	getAllCourses,
 	getAllCoursesWithCategories,
-	getAllCourseWithVideos
+	getAllCourseWithVideos,
+	createNewCourse,
+	updateDescriptionCourse
 };
