@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/app.js",
+    "seed": "node ./src/seeders/seed.js",
     "dev": "nodemon ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "John Asto",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.20"
