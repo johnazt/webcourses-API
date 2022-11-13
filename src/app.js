@@ -5,6 +5,7 @@ const initModels = require("./models/initModels");
 const userRoutes = require("./routes/users.routes");
 const courseRoutes = require("./routes/courses.routes");
 const videoRoutes = require("./routes/videos.routes");
+const categoryRoutes = require("./routes/categories.routes");
 
 const app = express();
 app.use(express.json());
@@ -29,6 +30,7 @@ app.get("/", (req, res) => {
 app.use("/api/v1", userRoutes);
 app.use("/api/v1", courseRoutes);
 app.use("/api/v1", videoRoutes);
+app.use("/api/v1", categoryRoutes);
 
 app.listen(PORT, () => {
 	console.log(`Server running in PORT${PORT}...`);
